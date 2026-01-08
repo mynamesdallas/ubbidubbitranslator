@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubbi Dubbi Translator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Ubbi Dubbi Translator</h1>
+        <ul class="navbar">
+            <li><a href="index.html">Ubbi Dubbi</a></li>
+            <li><a href="piglatin_page.html">Pig-Latin</a></li>
+        </ul>
+    </header>
+    <main>
+        <form id="translateForm">
+            <input type="text" id="ubbiInput" placeholder="Type a sentence to translate...">
+            <button type="submit">Translate</button>
+        </form>
+
+        <p id="translation">
+            <span id="label"></span>
+            <span id="result"></span>
+            <button id="copyBtn" onclick="copyToClipboard()">Copy Text</button>
+        </p>
+
+        
+        <div class="description-container">
+            <h2 class="description-title">
+                What is Ubbi Dubbi?
+            </h2>
+            <p class="description"><q>Ubbi Dubbi is a playful, secret language game where you insert 'ub' before every vowel sound in a word, popularized by the kids' show <i>ZOOM</i> in the 1970's, making it sound like 'Hubi Frubiends' for 'Hi friends'.</q></p>
+        </div>
+        <div class="learning-container">
+            <h2 class="instructions-title">Learn the language rules</h2>
+            <ul class="instructions">
+                <li><b>Find the vowel: </b>You need to identify each vowel in the word (a, e, i, o, u).</li>
+                <li><b>Add "ub": </b>Place the syllable "ub" before every vowel in the word.</li>
+                <li><b>Stress the "ub": </b>Make sure to put emphasis on the "ub".</li>
+                <li><b>Use simple phrases: </b>Learn common phrases like "Gubive mube uba hubigh fubive" to get a good idea of the language.</li>
+                <li><b>Make it a game: </b>Practice speaking the language with friends and family and throw off everyone around that doesn't know it.</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>created by: <span>myNamesDallas</span></p>
+    </footer>
+</body>
+</html>

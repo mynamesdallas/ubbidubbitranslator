@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+
+    height: 100%;
+    width: 100vw;
+    margin: 0;
+}
+
+/* Base layout */
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #FFF8E7;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2E2E2E;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  overflow: visible;
+}
+
+main {
+    flex: 1;
+}
+
+/* Title */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: end;
+}
+
+.navbar li {
+    list-style-type: none;
+    margin-bottom: 30px;
+}
+
+a {
+  background: #fff3d9;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #333;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+a:hover {
+  background: #ffe7b0;
+}
+
+
+/* Form layout */
+form {
+  width: 90vw;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Input field */
+input[type="text"] {
+  padding: 10px 15px;
+  border: 2px solid #4DA8DA;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 300px;
+  outline: none;
+}
+
+input[type="text"]::placeholder {
+  color: #A0A0A0;
+}
+
+/* Button */
+button {
+  background-color: #FF6F61;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e85c50;
+}
+
+/* Output text */
+#translation {
+  font-size: 1.1rem;
+  margin-top: 20px;
+  word-wrap: break-word;
+  text-align: center;
+  width: 90vw;
+}
+
+#label {
+    font-weight: bold;
+}
+
+#copyBtn {
+    display: none;
+}
+
+header {
+    width: 90%;
+}
+
+.description-container {
+    width: 80%;
+    text-align: center;
+    justify-self: center;
+}
+
+.learning-container ul li {
+    line-height: 30px;
+}
+
+footer {
+    margin-top: auto;
+    text-align: right;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Game Translator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Pig-Latin Translator</h1>
+        <ul class="navbar">
+            <li><a href="index.html">Ubbi Dubbi</a></li>
+            <li><a href="piglatin_page.html">Pig Latin</a></li>
+        </ul>
+    </header>
+    <main>
+        <form id="translateForm">
+            <input type="text" id="pigInput" placeholder="Type a sentence to translate...">
+            <button type="submit">Translate</button>
+        </form>
+
+        <p id="translation">
+            <span id="label"></span>
+            <span id="result"></span>
+            <button id="copyBtn" onclick="copyToClipboard()">Copy Text</button>
+        </p>
+
+        
+        <div class="description-container">
+            <h2 class="description-title">
+                What is Pig-Latin?
+            </h2>
+            <p class="description"><q>Pig Latin is a playful, secret language game where words are altered by moving the initial consonant or consonant cluster to the end and adding '-ay', or by just adding '-ay' or '-way' if the word starts with a vowel.</q></p>
+        </div>
+        <div class="learning-container">
+            <h2 class="instructions-title">Learn the language rules</h2>
+            <ul class="instructions">
+                <li><b>If a word starts with a consonant: </b>Move the first consonant (or consonant cluster, like "sh", "th") to the end and add "-ay".</li>
+                <ol>
+                    <li><em>Example: </em>"dog" becomes "og-day", "friend" becomes "end-fray".</li>
+                </ol>
+                <li><b>If a word starts with a vowel: </b>Add "-ay", "-yay", or "-way" to the end.</li>
+                <ol>
+                    <li><em>Example: </em>"apple" becomes "apple-way", "out" becomes "out-yay".</li>
+                </ol>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>created by: <span>myNamesDallas</span></p>
+    </footer>
+</body>
+</html>
