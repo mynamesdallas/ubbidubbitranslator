@@ -1,137 +1,191 @@
-*,
-*::before,
-*::after {
+/* ------------------------------
+   Global Reset & Base Styles
+------------------------------ */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-
-    height: 100%;
-    width: 100vw;
-    margin: 0;
-}
-
-/* Base layout */
 body {
-  min-height: 100vh;
-  width: 100%;
-  background-color: #FFF8E7;
-  font-family: 'Segoe UI', sans-serif;
-  color: #2E2E2E;
-  display: flex;
-  flex-direction: column;
-  padding: 40px;
-  overflow: visible;
+    font-family: "Inter", "Poppins", sans-serif;
+    background: #f7f7f9;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
 }
 
+/* ------------------------------
+   Header & Navigation
+------------------------------ */
+header {
+    background: #ffffff;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    padding-bottom: 4px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar a:hover {
+    color: #0077ff;
+    border-bottom: 2px solid #0077ff;
+}
+
+/* ------------------------------
+   Main Layout
+------------------------------ */
 main {
     flex: 1;
+    width: min(900px, 90%);
+    margin: 2rem auto;
 }
 
-/* Title */
-h1 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-/* Navbar */
-.navbar {
+/* ------------------------------
+   Form Styling
+------------------------------ */
+#translateForm {
     display: flex;
-    justify-content: end;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.navbar li {
-    list-style-type: none;
-    margin-bottom: 30px;
+#translateForm input {
+    flex: 1;
+    padding: 0.9rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.2s ease;
 }
 
-a {
-  background: #fff3d9;
-  padding: 6px 12px;
-  border-radius: 20px;
-  color: #333;
-  text-decoration: none;
-  transition: 0.2s ease;
-}
-a:hover {
-  background: #ffe7b0;
+#translateForm input:focus {
+    border-color: #0077ff;
+    outline: none;
 }
 
-
-/* Form layout */
-form {
-  width: 90vw;
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+#translateForm button {
+    padding: 0.9rem 1.4rem;
+    background: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
 }
 
-/* Input field */
-input[type="text"] {
-  padding: 10px 15px;
-  border: 2px solid #4DA8DA;
-  border-radius: 8px;
-  font-size: 1rem;
-  width: 300px;
-  outline: none;
+#translateForm button:hover {
+    background: #005fcc;
 }
 
-input[type="text"]::placeholder {
-  color: #A0A0A0;
-}
-
-/* Button */
-button {
-  background-color: #FF6F61;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #e85c50;
-}
-
-/* Output text */
+/* ------------------------------
+   Translation Output
+------------------------------ */
 #translation {
-  font-size: 1.1rem;
-  margin-top: 20px;
-  word-wrap: break-word;
-  text-align: center;
-  width: 90vw;
-}
-
-#label {
-    font-weight: bold;
+    background: #ffffff;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 #copyBtn {
-    display: none;
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
 }
 
-header {
-    width: 90%;
+#copyBtn:hover {
+    background: #000;
 }
 
-.description-container {
-    width: 80%;
-    text-align: center;
-    justify-self: center;
+/* ------------------------------
+   Info Sections (Cards)
+------------------------------ */
+.description-container,
+.learning-container {
+    background: #ffffff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
 }
 
-.learning-container ul li {
-    line-height: 30px;
+.description-title,
+.instructions-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
+.description {
+    font-size: 1rem;
+    color: #444;
+}
+
+.instructions {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.instructions li {
+    margin-bottom: 0.6rem;
+}
+
+/* ------------------------------
+   Footer
+------------------------------ */
 footer {
+    background: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
     margin-top: auto;
-    text-align: right;
+}
 
+footer span {
+    font-weight: 600;
+    color: #0077ff;
+}
+
+/* ------------------------------
+   Responsive Tweaks
+------------------------------ */
+@media (max-width: 600px) {
+    #translateForm {
+        flex-direction: column;
+    }
+
+    #translateForm button {
+        width: 100%;
+    }
 }
