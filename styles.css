@@ -64,13 +64,13 @@ main {
 /* ------------------------------
    Form Styling
 ------------------------------ */
-#translateForm {
+#translationForm, #translationForm2 {
     display: flex;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
-#translateForm input {
+#translationForm input, #translationForm2 input {
     flex: 1;
     padding: 0.9rem 1rem;
     border: 1px solid #ccc;
@@ -79,12 +79,12 @@ main {
     transition: border 0.2s ease;
 }
 
-#translateForm input:focus {
+#translation input:focus, #translationForm2 input:focus {
     border-color: #0077ff;
     outline: none;
 }
 
-#translateForm button {
+#translationForm button, #translationForm2 button {
     padding: 0.9rem 1.4rem;
     background: #0077ff;
     color: white;
@@ -92,10 +92,10 @@ main {
     border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: 0.2s ease;
 }
 
-#translateForm button:hover {
+#translationForm button:hover, #translationForm2 button:hover {
     background: #005fcc;
 }
 
