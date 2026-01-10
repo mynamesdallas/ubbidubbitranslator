@@ -1,3 +1,4 @@
+//UbbiDubbi to English translator//
 const ubbiDubbiTranslator = (sentence) => {
     const vowels = "aeiou";
     const insert = "ub"
@@ -13,16 +14,48 @@ const ubbiDubbiTranslator = (sentence) => {
     return result;
 };
 
-document.getElementById("translateForm").addEventListener("submit", (e) => {
+//English to UbbiDubbi translator
+const ubbiDubbiToEnglish = (sentence, ub = "ub") => {
+    const vowels = "aeiou";
+    let result = "";
+    let i = 0;
+
+    while (i < sentence.length) {
+        if (
+            sentence.slice(i, i + ub.length) === ub &&
+            vowels.includes(sentence[i + ub.length])
+        ) {
+            i += ub.length;
+        }
+        result += sentence[i];
+        i++;
+    }
+
+    return result;
+};
+
+//Event listener that translates back to English
+document.getElementById("translationForm").addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const sentence = document.getElementById("ubbiInput").value;
+    const sentence = document.getElementById("englishInput").value;
     const translated = ubbiDubbiTranslator(sentence);
 
     document.getElementById("label").textContent = `Sentence translates to:`;
     document.getElementById("result").textContent = translated;
     document.getElementById("copyBtn").style.display = "inline-block";
 });
+
+document.getElementById("translationForm2").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const sentence = document.getElementById("ubbiInput").value;
+    const translated = ubbiDubbiToEnglish(sentence);
+
+    document.getElementById("label").textContent = `Sentence translates to:`;
+    document.getElementById("result").textContent = translated;
+    document.getElementById("copyBtn").style.display = "inline-block";
+})
 
 document.getElementById("copyBtn").addEventListener("click", () => {
   const text = document.getElementById("result").textContent;
@@ -39,6 +72,7 @@ document.getElementById("copyBtn").addEventListener("click", () => {
   });
 });
 
+//English to Pig Latin translator
 const pigLatin = (word) => {
     const vowels = ["a", "e", "i", "o", "u"];
     const lowerCase = word.toLowerCase();
@@ -69,10 +103,10 @@ const pigLatinTranslator = (sentence) => {
         .join(" ");
 };
 
-document.getElementById("translateForm").addEventListener("submit", (e) => {
+document.getElementById("translationForm").addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const sentence = document.getElementById("pigInput").value;
+    const sentence = document.getElementById("translationInput").value;
     const translated = pigLatinTranslator(sentence);
 
     document.getElementById("label").textContent = `Sentence translates to:`;
