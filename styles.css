@@ -64,13 +64,17 @@ main {
 /* ------------------------------
    Form Styling
 ------------------------------ */
-#translationForm, #translationForm2 {
+#ubbiDubbiForm, 
+#ubbiDubbiToEnglishForm,
+#pigLatinForm {
     display: flex;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
-#translationForm input, #translationForm2 input {
+#ubbiDubbiForm input, 
+#ubbiDubbiToEnglishForm input,
+#pigLatinForm input {
     flex: 1;
     padding: 0.9rem 1rem;
     border: 1px solid #ccc;
@@ -79,12 +83,16 @@ main {
     transition: border 0.2s ease;
 }
 
-#translation input:focus, #translationForm2 input:focus {
+#ubbiDubbiForm input:focus, 
+#ubbiDubbiToEnglishForm input:focus,
+#pigLatinForm input:focus {
     border-color: #0077ff;
     outline: none;
 }
 
-#translationForm button, #translationForm2 button {
+#ubbiDubbiForm button, 
+#ubbiDubbiToEnglishForm button,
+#pigLatinForm button {
     padding: 0.9rem 1.4rem;
     background: #0077ff;
     color: white;
@@ -95,7 +103,9 @@ main {
     transition: 0.2s ease;
 }
 
-#translationForm button:hover, #translationForm2 button:hover {
+#ubbiDubbiForm button:hover, 
+#ubbiDubbiToEnglishForm button:hover,
+#pigLatinForm button:hover {
     background: #005fcc;
 }
 
@@ -121,7 +131,7 @@ main {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: 0.2s ease;
 }
 
 #copyBtn:hover {
