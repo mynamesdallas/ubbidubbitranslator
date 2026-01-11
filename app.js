@@ -34,28 +34,31 @@ const ubbiDubbiToEnglish = (sentence, ub = "ub") => {
     return result;
 };
 
-//Event listener that translates back to English
-document.getElementById("translationForm").addEventListener("submit", (e) => {
-    e.preventDefault();
+//Event listener that translates to Ubbi Dubbi from English
+const ubbiForm = document.getElementById("ubbiDubbiForm");
+if (ubbiForm) {
+    ubbiForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const sentence = document.getElementById("englishInput").value;
+        const translated = ubbiDubbiTranslator(sentence);
+        document.getElementById("label").textContent = "Sentence translates to:";
+        document.getElementById("result").textContent = translated;
+        document.getElementById("copyBtn").style.display = "inline-block";
+    });
+}
 
-    const sentence = document.getElementById("englishInput").value;
-    const translated = ubbiDubbiTranslator(sentence);
-
-    document.getElementById("label").textContent = `Sentence translates to:`;
-    document.getElementById("result").textContent = translated;
-    document.getElementById("copyBtn").style.display = "inline-block";
-});
-
-document.getElementById("translationForm2").addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const sentence = document.getElementById("ubbiInput").value;
-    const translated = ubbiDubbiToEnglish(sentence);
-
-    document.getElementById("label").textContent = `Sentence translates to:`;
-    document.getElementById("result").textContent = translated;
-    document.getElementById("copyBtn").style.display = "inline-block";
-})
+//Event listener that translates Ubbi Dubbi back to English
+const ubbiEnglishForm = document.getElementById("ubbiDubbiToEnglishForm");
+if (ubbiEnglishForm) {
+    ubbiEnglishForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const sentence = document.getElementById("ubbiInput").value;
+        const translated = ubbiDubbiToEnglish(sentence);
+        document.getElementById("label").textContent = "Sentence translates to:";
+        document.getElementById("result"). textContent = translated;
+        document.getElementById("copyBtn").style.display = "inline-block";
+    })
+}
 
 document.getElementById("copyBtn").addEventListener("click", () => {
   const text = document.getElementById("result").textContent;
@@ -102,14 +105,15 @@ const pigLatinTranslator = (sentence) => {
         .map(word => pigLatin(word))
         .join(" ");
 };
-
-document.getElementById("translationForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const sentence = document.getElementById("translationInput").value;
-    const translated = pigLatinTranslator(sentence);
-
-    document.getElementById("label").textContent = `Sentence translates to:`;
-    document.getElementById("result").textContent = translated;
-    document.getElementById("copyBtn").style.display = "inline-block";
-});
+//Event listener that translates to Pig Latin
+const pigForm = document.getElementById("pigLatinForm");
+if (pigForm) {
+    pigForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const sentence = document.getElementById("englishInputPig").value;
+        const translated = pigLatinTranslator(sentence);
+        document.getElementById("label").textContent = "Sentence translates to:";
+        document.getElementById("result").textContent = translated;
+        document.getElementById("copyBtn").style.display = "inline-block"
+    })
+}
